@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <!-- <link rel="stylesheet" href="style.css"> -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+ 
+    <title>Lista de Tarefas</title>
+
+  </head>
+  <body class="antialiased font-sans bg-gray-200">
+    <div class="min-h-screen flex items-center justify-center bg-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-md w-full bg-indigo-300 space-y-8">
+
+        <h1 class="mt-6 text-center text-4xl font-extrabold text-gray-900">Lista de Tarefas</h1>
+        <div class="flex rounded-md shadow-sm">
+  
+          <input class="ml-4 shadow-sm focus:ring-indigo-500 focus:border-indigo-500  block w-full sm:text-sm border-gray-300 rounded-md" type="text" id="tarefa" />
+            <button class="ml-4 mr-4 items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-md font-medium text-white bg-indigo-600 hover:bg-indigo-700 " onclick="cad()">Cadastrar</button>
+            
+          </div>
+          <div class="mt-8 space-y-6">
+            
+            <ul class="lista ">
+              
+            </ul>
+          </div>
+      </div>
+      </div>
+    </div>
+      <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+
+      <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+      <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+
+      <!-- Add Firebase products that you want to use -->
+      <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
