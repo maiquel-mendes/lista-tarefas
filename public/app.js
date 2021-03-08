@@ -17,8 +17,6 @@ var db = firebase.firestore(app)
 const tarefa = document.querySelector('#tarefa')
 var liElement;
 var ulElement = document.querySelector('.lista')
-var teste = document.querySelector('.8jcaYf67i8T9MBFukhWO')
-// console.log(teste)
 
 
 function render() {
@@ -73,22 +71,22 @@ function criarElemento(value, id) {
 
     liElement = document.createElement('li')
     liElement.innerHTML = value;
-    liElement.className = id + ' bg-gray-50 border px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6'
+    liElement.setAttribute('data-js', `${id}`)
+    liElement.className = 'bg-gray-50 border px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6'
     ulElement.appendChild(liElement)
     var botao = document.createElement('button')
     botao.innerHTML = '<i class="fa fa-trash"></i>'
     botao.className = 'ml-4 px-2 py-2 items-center border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-red-600 hover:bg-red-700'
-
-    console.log("teste")
-    botao.setAttribute('onclick', `deleteTodo(${id})`)
+    botao.addEventListener('click', function () {
+        deleteTodo(id)
+    })
     liElement.appendChild(botao)
 
 }
 
 function deleteTodo(pos) {
 
-    let liEle = document.querySelector(`.${pos}`)
-    console.log(liEle)
+    let liEle = document.querySelector(`[data-js="${pos}"]`)
     db.collection("tarefas").doc(`${pos}`).delete().then(() => {
         console.log("Document successfully deleted!");
         ulElement.removeChild(liEle)
