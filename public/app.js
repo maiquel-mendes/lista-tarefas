@@ -72,11 +72,11 @@ function criarElemento(value, id) {
     liElement = document.createElement('li')
     liElement.innerHTML = value;
     liElement.setAttribute('data-js', `${id}`)
-    liElement.className = 'bg-gray-50 border px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6'
+    liElement.className = 'list-group-item m-2'
     ulElement.appendChild(liElement)
     var botao = document.createElement('button')
-    botao.innerHTML = '<i class="fa fa-trash"></i>'
-    botao.className = 'ml-4 px-2 py-2 items-center border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-red-600 hover:bg-red-700'
+    botao.innerHTML = '<i class="bi bi-trash"></i>'
+    botao.className = 'btn btn-danger'
     botao.addEventListener('click', function () {
         deleteTodo(id)
     })
