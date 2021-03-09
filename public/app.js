@@ -72,11 +72,11 @@ function criarElemento(value, id) {
     liElement = document.createElement('li')
     liElement.innerHTML = value;
     liElement.setAttribute('data-js', `${id}`)
-    liElement.className = 'list-group-item m-2'
+    liElement.className = 'd-flex list-group-item justify-content-between'
     ulElement.appendChild(liElement)
     var botao = document.createElement('button')
     botao.innerHTML = '<i class="bi bi-trash"></i>'
-    botao.className = 'btn btn-danger'
+    botao.className = 'd-flex btn btn-danger'
     botao.addEventListener('click', function () {
         deleteTodo(id)
     })
